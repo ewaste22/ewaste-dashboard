@@ -4,7 +4,7 @@ export default function HeadBar() {
   return (
     <>
       {/* Navbar */}
-      <nav className="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent p-4 md:flex-row md:flex-nowrap md:justify-start">
+      <nav className="fixed top-0 left-0 z-10 flex w-full items-center bg-transparent p-4 md:flex-row md:flex-nowrap md:justify-start">
         <div className="mx-auto flex w-full flex-wrap items-center justify-between px-4 md:flex-nowrap md:px-10">
           {/* Brand */}
           <a
