@@ -44,22 +44,22 @@ export default function Transactions() {
             <table className='min-w-full leading-normal '>
               <thead>
                 <tr>
-                  <th className='px-5 py-3 border-b-2  text-left text-xs font-semibold text-gray-600 uppercase tracking-wide'>
+                  <th className='px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
                     No
                   </th>
-                  <th className='px-5 py-3 border-b-2  text-left text-xs font-semibold text-gray-600 uppercase tracking-wide'>
+                  <th className='px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
                     ID
                   </th>
-                  <th className='px-5 py-3 border-b-2  text-left text-xs font-semibold text-gray-600 uppercase tracking-wide'>
+                  <th className='px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
                     Date
                   </th>
-                  <th className='px-5 py-3 border-b-2  text-left text-xs font-semibold text-gray-600 uppercase tracking-wide'>
+                  <th className='px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
                     Customer Name
                   </th>
-                  <th className='px-5 py-3 border-b-2  text-left text-xs font-semibold text-gray-600 uppercase tracking-wide'>
+                  <th className='px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
                     Status Transaction
                   </th>
-                  <th className='px-5 py-3 border-b-2  text-left text-xs font-semibold text-gray-600 uppercase tracking-wide'>
+                  <th className='px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
                     Total Quantity
                   </th>
                 </tr>
@@ -67,58 +67,64 @@ export default function Transactions() {
 
             <tbody>
               <tr>
-                <td className='px-5 py-5 text-sm'>1</td>
-                <td>
+                <td className='px-5 py-5 text-sm text-center'>
+                  1
+                </td>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>00001</p>
                 </td>
-                <td className='px-5 py-5 text-sm'>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>24-10-2022</p>
                 </td>
-                <td className='px-5 py-5 text-sm'>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>Kim Jiso</p>
                 </td>
-                <td className='px-5 py-5 text-sm'>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>Success</p>
                 </td>
-                <td className='px-5 py-5 text-sm'>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>5 Items</p>
                 </td>
               </tr>
 
               <tr>
-                <td className='px-5 py-5 text-sm'>2</td>
-                <td>
+                <td className='px-5 py-5 text-sm text-center'>
+                  2
+                </td>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>00002</p>
                 </td>
-                <td className='px-5 py-5 text-sm'>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>23-10-2022</p>
                 </td>
-                <td className='px-5 py-5 text-sm'>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>Kim Jennie</p>
                 </td>
-                <td className='px-5 py-5 text-sm'>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>Success</p>
                 </td>
-                <td className='px-5 py-5 text-sm'>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>10 Items</p>
                 </td>
               </tr>
 
               <tr>
-                <td className='px-5 py-5 text-sm'>3</td>
-                <td>
+                <td className='px-5 py-5 text-sm text-center'>
+                  3
+                </td>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>00003</p>
                 </td>
-                <td className='px-5 py-5 text-sm'>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>22-10-2022</p>
                 </td>
-                <td className='px-5 py-5 text-sm'>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>Lalisa</p>
                 </td>
-                <td className='px-5 py-5 text-sm'>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>Cancel</p>
                 </td>
-                <td className='px-5 py-5 text-sm'>
+                <td className='px-5 py-5 text-sm text-center'>
                   <p>7 Items</p>
                 </td>
               </tr>
@@ -127,7 +133,7 @@ export default function Transactions() {
 
            
           </div>
-          <div className='px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between '>
+          {/* <div className='px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between '>
             <div className="inline-flex mt-2 xs:mt-0">
 							<button className="text-sm text-indigo-50 transition duration-150 bg-gray-700 hover:bg-gray-800 font-semibold py-2 px-4 rounded-lg">
               Prev
@@ -138,7 +144,7 @@ export default function Transactions() {
               </button>
 						</div>
             </div>
-           
+            */}
         </div>
         </div>
       </div>
