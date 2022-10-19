@@ -131,15 +131,15 @@ export default function Dashboard() {
                   <div className="h-[42px] w-[40px] rounded-xl bg-[#E61C24]"></div>
                   <p>Temperature exchange equipment</p>
                 </div>
-                <div className="flex flex-row items-center gap-2">
+                <div className="flex flex-row items-center gap-3">
                   <div className="h-[42px] w-[40px] rounded-xl bg-[#2C5EBF]"></div>
                   <p>Lamps</p>
                 </div>
-                <div className="flex flex-row items-center gap-2">
+                <div className="flex flex-row items-center gap-3">
                   <div className="h-[42px] w-[40px] rounded-xl bg-[#902CBF]"></div>
                   <p>Small equipment</p>
                 </div>
-                <div className="flex flex-row items-center gap-2">
+                <div className="flex flex-row items-center gap-3">
                   <div className="h-[42px] w-[40px] rounded-xl bg-[#2D5030]"></div>
                   <p> Screens and monitors</p>
                 </div>

@@ -23,7 +23,7 @@ export default function Transactions() {
       </div>
 
       {/* Title */}
-      <div className='container px-8 mx-auto my-10'>
+      <div className='container px-8 mx-auto my-10 pb-28'>
         <div className='bg-white border rounded-lg shadow-lg p-10'>
             <div className='flex flex-row w-full px-2'> 
             <div className='flex flex-row w-1/2'>

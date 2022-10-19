@@ -2,7 +2,7 @@ import HeadBar from '../../components/dashboard/HeadBar';
 import SideBar from '../../components/dashboard/SideBar';
 import { AiOutlineBell } from 'react-icons/ai';
 
-export default function Waste() {
+export default function Pickup() {
     return(   
     <>
     <SideBar />
@@ -27,7 +27,7 @@ export default function Waste() {
         <div className='bg-white border rounded-lg shadow-lg p-10'>
             <div className='flex flex-row w-full px-2'> 
             <div className='flex flex-row w-1/2'>
-            <h1 className='text-xl mb-2 font-bold'>Waste List</h1>
+            <h1 className='text-xl mb-2 font-bold'>Pickup List</h1>
             </div>
             <div className='flex relative flex-row w-1/2 '>
             {/* <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -51,10 +51,10 @@ export default function Waste() {
                     ID
                   </th>
                   <th className=' px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
-                    Name
+                    Status Pickup
                   </th>
                   <th className=' px-5 py-3 border-b-2 text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
-                    Category
+                    Courier Name
                   </th>
                   <th className=' px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
                     Actions
@@ -71,10 +71,10 @@ export default function Waste() {
                   <p>00001</p>
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>Freezer</p>
+                  <p>Need Process</p>
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>Temperature exchange equipment</p>
+                  <p>Alex Ujang</p>
                 </td>
                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-center">
@@ -106,10 +106,10 @@ export default function Waste() {
                   <p>00002</p>
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>Televisions</p>
+                  <p>On Process</p>
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>Screens and monitors</p>
+                  <p>Donny Rex</p>
                 </td>
                 <td class="px-5 py-5 text-sm">
                                     <div class="flex item-center justify-center">
@@ -141,10 +141,10 @@ export default function Waste() {
                   <p>00003</p>
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>LED lamps</p>
+                  <p>Success</p>
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>Lamps</p>
+                  <p>Asep Brimstone</p>
                 </td>
                 <td class="py-3 px-6 text-sm">
                                     <div class="flex item-center justify-center">
