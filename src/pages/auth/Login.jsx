@@ -24,7 +24,7 @@ export default function Login() {
           <div className="flex flex-col gap-6 mt-10">
             <input type="text" className="px-3 py-2 w-full bg-gray-300 outline-none rounded-md" placeholder="Username" />
             <input type="password" className="px-3 py-2 w-full bg-gray-300 outline-none rounded-md" placeholder="Password" />
-            <button className="btn rounded-full bg-[#85C681] border-none text-white text-lg shadow-xl hover:bg-[#85C681] drop-shadow-xl">
+            <button className="btn rounded-3xl bg-[#85C681] border-none text-white text-lg shadow-xl hover:bg-[#85C681] drop-shadow-xl">
               Login
             </button>
           </div>
