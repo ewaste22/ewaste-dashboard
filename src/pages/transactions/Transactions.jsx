@@ -1,6 +1,7 @@
 import HeadBar from '../../components/dashboard/HeadBar';
 import SideBar from '../../components/dashboard/SideBar';
 import { AiOutlineBell } from 'react-icons/ai';
+import { IoMdExit } from "react-icons/io";
 
 export default function Transactions() {
     return(   
@@ -16,10 +17,11 @@ export default function Transactions() {
         <div className='bg-white rounded-full flex items-center justify-center p-2'>
           <AiOutlineBell className='w-[35px] h-[35px]'/>
         </div>
-        <div className='bg-white rounded-md w-[207px] flex flex-row gap-3 items-center px-3 py-1'>
-          {/* <image src='/user.png' alt='user' className='rounded-full w-[40px] h-[40px]'/> */}
-          <p className=''>Lee Ji Eun / IU</p>
-        </div>
+        <div className="flex w-[160px] flex-row items-center gap-3 rounded-md bg-white px-3 py-1">
+            {/* <image src='/user.png' alt='user' className='rounded-full w-[40px] h-[40px]'/> */}
+            <p className="">Logout</p>
+            <IoMdExit  className="h-[35px] w-[25px]" />
+          </div>
       </div>
 
       {/* Title */}
@@ -62,6 +64,9 @@ export default function Transactions() {
                   <th className='px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
                     Total Quantity
                   </th>
+                  <th className='px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
+                    Actions
+                  </th>
                 </tr>
               </thead>
 
@@ -85,6 +90,16 @@ export default function Transactions() {
                 <td className='px-5 py-5 text-sm text-center'>
                   <p>5 Items</p>
                 </td>
+                <td class="py-3 px-6 text-center">
+                                    <div class="flex item-center justify-center">
+                                        <div class="w-4 mr-2 transform hover:text-gray-800 hover:scale-110">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+              </td>
               </tr>
 
               <tr>
@@ -106,6 +121,16 @@ export default function Transactions() {
                 <td className='px-5 py-5 text-sm text-center'>
                   <p>10 Items</p>
                 </td>
+                <td class="py-3 px-6 text-center">
+                                    <div class="flex item-center justify-center">
+                                        <div class="w-4 mr-2 transform hover:text-gray-800 hover:scale-110">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+              </td>
               </tr>
 
               <tr>
@@ -127,6 +152,16 @@ export default function Transactions() {
                 <td className='px-5 py-5 text-sm text-center'>
                   <p>7 Items</p>
                 </td>
+                <td class="py-3 px-6 text-center">
+                                    <div class="flex item-center justify-center">
+                                        <div class="w-4 mr-2 transform hover:text-gray-800 hover:scale-110">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+              </td>
               </tr>
             </tbody>
             </table>

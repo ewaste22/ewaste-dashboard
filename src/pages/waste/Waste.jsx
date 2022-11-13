@@ -1,6 +1,7 @@
 import HeadBar from '../../components/dashboard/HeadBar';
 import SideBar from '../../components/dashboard/SideBar';
 import { AiOutlineBell } from 'react-icons/ai';
+import { IoMdExit } from "react-icons/io";
 
 export default function Waste() {
     return(   
@@ -16,10 +17,11 @@ export default function Waste() {
         <div className='bg-white rounded-full flex items-center justify-center p-2'>
           <AiOutlineBell className='w-[35px] h-[35px]'/>
         </div>
-        <div className='bg-white rounded-md w-[207px] flex flex-row gap-3 items-center px-3 py-1'>
-          {/* <image src='/user.png' alt='user' className='rounded-full w-[40px] h-[40px]'/> */}
-          <p className=''>Lee Ji Eun / IU</p>
-        </div>
+        <div className="flex w-[160px] flex-row items-center gap-3 rounded-md bg-white px-3 py-1">
+            {/* <image src='/user.png' alt='user' className='rounded-full w-[40px] h-[40px]'/> */}
+            <p className="">Logout</p>
+            <IoMdExit  className="h-[35px] w-[25px]" />
+          </div>
       </div>
 
       {/* Title */}
@@ -34,7 +36,7 @@ export default function Waste() {
             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
              </div> */}
             {/* <input type="text" id="table-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-80 pl-10  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Search"></input> */}
-             <button type="submit" class="text-white absolute right-5  bg-gray-700 hover:bg-gray-800 font-medium rounded-lg text-sm px-4 py-2">Tambah</button>
+             <button type="submit" class="text-white absolute right-5  bg-gray-700 hover:bg-gray-800 font-medium rounded-lg text-sm px-4 py-2">Add</button>
             </div>
             </div>
            

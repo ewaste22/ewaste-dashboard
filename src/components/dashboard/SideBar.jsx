@@ -10,6 +10,7 @@ import {
   TbTruckDelivery,
   TbUsers,
   TbX,
+  TbNotes,
 } from 'react-icons/tb';
 import UserDropdown from '../dropdowns/UserDropdown';
 
@@ -160,6 +161,28 @@ export default function SideBar() {
                 <Link
                   className={
                     'flex py-3 text-lg font-bold ' +
+                    (window.location.href.indexOf('/category') !== -1
+                      ? 'text-lightBlue-500 hover:text-lightBlue-600'
+                      : 'text-stone-700 hover:text-stone-500')
+                  }
+                  to="/category"
+                >
+                  <TbMenu2
+                    className={
+                      'fas fa-table mr-2 text-2xl ' +
+                      (window.location.href.indexOf('/category') !== -1
+                        ? 'opacity-75'
+                        : 'text-stone-300')
+                    }
+                  />{' '}
+                  Category
+                </Link>
+              </li>              
+
+              <li className="items-center">
+                <Link
+                  className={
+                    'flex py-3 text-lg font-bold ' +
                     (window.location.href.indexOf('/waste') !== -1
                       ? 'text-lightBlue-500 hover:text-lightBlue-600'
                       : 'text-stone-700 hover:text-stone-500')
@@ -197,6 +220,28 @@ export default function SideBar() {
                     }
                   />{' '}
                   Pickup
+                </Link>
+              </li>
+
+              <li className="items-center">
+                <Link
+                  className={
+                    'flex py-3 text-lg font-bold ' +
+                    (window.location.href.indexOf('/news') !== -1
+                      ? 'text-lightBlue-500 hover:text-lightBlue-600'
+                      : 'text-stone-700 hover:text-stone-500')
+                  }
+                  to="/news"
+                >
+                  <TbNotes
+                    className={
+                      'fas fa-map-marked mr-2 text-2xl ' +
+                      (window.location.href.indexOf('/news') !== -1
+                        ? 'opacity-75'
+                        : 'text-stone-300')
+                    }
+                  />{' '}
+                  News
                 </Link>
               </li>
             </ul>
