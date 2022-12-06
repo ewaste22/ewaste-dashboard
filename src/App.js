@@ -6,6 +6,8 @@ import Category from './pages/category/Category';
 import Waste from './pages/waste/Waste';
 import Pickup from './pages/pickup/Pickup';
 import News from './pages/news/News';
+import { AddNews } from './pages/news/AddNews';
+import { AddWaste } from './pages/waste/AddWaste';
 
 function App() {
   return (
@@ -15,8 +17,10 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/transactions" element={<Transactions />} />
         <Route path="/waste" element={<Waste />} />
+        <Route path='/addwaste' element={<AddWaste/>} />
         <Route path="/pickup" element={<Pickup />} />
         <Route path="/news" element={<News />} />
+        <Route path="/addnews" element={<AddNews />} />
         <Route path="/category" element={<Category />} />
       </Routes>
     </BrowserRouter>
