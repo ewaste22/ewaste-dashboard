@@ -1,6 +1,8 @@
 import React from 'react'
 import Footer from '../../components/dashboard/Footer';
 import iconupload from '../../asset/img/upload_icon.png';
+import { Link } from "react-router-dom";
+
 export const AddWaste = () => {
   return (
     <div
@@ -41,9 +43,9 @@ export const AddWaste = () => {
             <button className="btn rounded-3xl bg-[#85C681] border-none text-white text-lg shadow-xl hover:bg-[#85C681]  w-[250px] h-[45px] ">
               Add
             </button>
-            <button className="btn rounded-3xl bg-[#D2D2D2] border-none text-white text-lg shadow-xl hover:bg-red-600 opacity-95  w-[250px] h-[45px] mt-3">
+            <Link to={`/Waste`}><button className="btn rounded-3xl bg-[#D2D2D2] border-none text-white text-lg shadow-xl hover:bg-red-600 opacity-95  w-[250px] h-[45px] mt-3">
               Cancel
-            </button>
+            </button></Link>
             </div>
            
           </div>

@@ -8,6 +8,9 @@ import Pickup from './pages/pickup/Pickup';
 import News from './pages/news/News';
 import { AddNews } from './pages/news/AddNews';
 import { AddWaste } from './pages/waste/AddWaste';
+import { AddPickup } from './pages/pickup/AddPickup';
+import { AddCategory } from './pages/category/AddCategory';
+
 
 function App() {
   return (
@@ -19,9 +22,11 @@ function App() {
         <Route path="/waste" element={<Waste />} />
         <Route path='/addwaste' element={<AddWaste/>} />
         <Route path="/pickup" element={<Pickup />} />
+        <Route path="/addpickup" element={<AddPickup />} />
         <Route path="/news" element={<News />} />
         <Route path="/addnews" element={<AddNews />} />
         <Route path="/category" element={<Category />} />
+        <Route path="/addcategory" element={<AddCategory />} />
       </Routes>
     </BrowserRouter>
   );
