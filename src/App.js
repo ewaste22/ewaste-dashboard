@@ -13,6 +13,9 @@ import { AddNews } from './pages/news/AddNews';
 import { AddWaste } from './pages/waste/AddWaste';
 import { AddPickup } from './pages/pickup/AddPickup';
 import { AddCategory } from './pages/category/AddCategory';
+import { AddAdmin } from './pages/manageUser/AddAdmin';
+import { AddCourier } from './pages/manageUser/AddCourier';
+import { AddUser } from './pages/manageUser/AddUser';
 
 
 function App() {
@@ -22,8 +25,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Dashboard />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path='/addadmin' element={<AddAdmin/>} />
         <Route path="/courier" element={<Courier />} />
+        <Route path='/addcourier' element={<AddCourier/>} />
         <Route path="/user" element={<User />} />
+        <Route path='/adduser' element={<AddUser/>} />
         <Route path="/transactions" element={<Transactions />} />
         <Route path="/waste" element={<Waste />} />
         <Route path='/addwaste' element={<AddWaste/>} />
