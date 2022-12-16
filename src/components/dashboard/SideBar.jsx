@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import React,{ useState } from 'react';
 import { Link } from 'react-router-dom';
+import { SidebarData } from './SidebarData';
+import SubMenu from './SubMenu';
 
 import {
   TbDeviceDesktopAnalytics,
@@ -114,7 +116,11 @@ export default function SideBar() {
               </li>
 
               <li className="items-center">
-                <Link
+                {SidebarData.map((item, index) => {
+                  return <SubMenu item={item} key={index} />;
+
+                })}
+                {/* <Link
                   className={
                     'flex py-3 text-lg font-bold ' +
                     (window.location.href.indexOf('/users') !== -1
@@ -132,7 +138,7 @@ export default function SideBar() {
                     }
                   />{' '}
                   Management Users
-                </Link>
+                </Link> */}
               </li>
 
               <li className="items-center">
