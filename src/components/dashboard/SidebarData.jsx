@@ -11,15 +11,15 @@ export const SidebarData = [
         subNav: [
             {
                 title : 'Admin',
-                path : '/users/admin',
+                path : '/Admin',
             },
             {
                 title : 'Courier',
-                path : '/users/courier',
+                path : '/Courier',
             },
             {
                 title : 'User',
-                path : '/users/user',
+                path : '/User',
             },
         ]
     }

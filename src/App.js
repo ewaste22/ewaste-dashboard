@@ -6,6 +6,9 @@ import Category from './pages/category/Category';
 import Waste from './pages/waste/Waste';
 import Pickup from './pages/pickup/Pickup';
 import News from './pages/news/News';
+import Admin from './pages/manageUser/Admin';
+import Courier from './pages/manageUser/Courier';
+import User from './pages/manageUser/User';
 import { AddNews } from './pages/news/AddNews';
 import { AddWaste } from './pages/waste/AddWaste';
 import { AddPickup } from './pages/pickup/AddPickup';
@@ -18,6 +21,9 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Dashboard />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/courier" element={<Courier />} />
+        <Route path="/user" element={<User />} />
         <Route path="/transactions" element={<Transactions />} />
         <Route path="/waste" element={<Waste />} />
         <Route path='/addwaste' element={<AddWaste/>} />
