@@ -1,13 +1,14 @@
 import React from 'react'
 import { TbUser } from 'react-icons/tb'
-import * as RiIcons from 'react-icons/ri'
+import {BiDownArrow}from 'react-icons/bi'; 
+import {BiUpArrow} from 'react-icons/bi';
 
 export const SidebarData = [
     {
         title : 'Manage Users',
         icon : <TbUser />,
-        iconClosed: <RiIcons.RiArrowDownFill />,
-        iconOpened: <RiIcons.RiArrowUpFill />,
+        iconClosed: <BiDownArrow />,
+        iconOpened: <BiUpArrow />,
         subNav: [
             {
                 title : 'Admin',

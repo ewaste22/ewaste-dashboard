@@ -43,10 +43,10 @@ export const AddCourier = () => {
           <input type="password" className="px-3 py-2 w-full bg-gray-300 outline-none rounded-md pb-16" placeholder="Description" />
           </div> */}
          <div className="flex flex-col justify-center w-full items-center">
-            <button className="btn rounded-3xl bg-[#85C681] border-none text-white text-lg shadow-xl hover:bg-[#85C681]  w-[100px] h-[10px] ">
+            <button className="btn rounded-3xl bg-[#85C681] border-none text-white text-lg shadow-xl hover:bg-[#85C681]  w-[250px] h-[45px] mt-3">
               Add
             </button>
-            <Link to={`/Courier`}><button className="btn rounded-3xl bg-[#D2D2D2] border-none text-white text-lg shadow-xl hover:bg-red-600 opacity-95  w-[100px] h-[10px] mt-3">
+            <Link to={`/Courier`}><button className="btn rounded-3xl bg-[#D2D2D2] border-none text-white text-lg shadow-xl hover:bg-red-600 opacity-95  w-[250px] h-[45px] mt-3">
               Cancel
             </button></Link>
             </div>

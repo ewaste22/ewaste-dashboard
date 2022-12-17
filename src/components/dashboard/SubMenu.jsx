@@ -12,7 +12,7 @@ const SubMenu = ({item}) => {
         <Link to={item.path}  onClick={item.subNav && showSubnav} >
             <div className="flex">
               <div className="mr-2 text-2xl">{item.icon}</div>  
-              <div className="text-lg font-bold">{item.title}</div>
+              <div className="text-lg font-bold text-stone-700 hover:text-stone-500">{item.title}</div>
               <div className="ml-auto text-2xl"> {item.subNav && subNav
             ? item.iconOpened
             : item.subNav
@@ -28,7 +28,7 @@ const SubMenu = ({item}) => {
           return (
             <Link to={item.path} key={index}>
             <div className="mr-2 text-2xl">{item.icon}</div>  
-              <div className="text-lg font-bold">{item.title}</div>
+              <div className="text-lg font-bold ml-8">{item.title}</div>
             </Link>
           );
         })}
