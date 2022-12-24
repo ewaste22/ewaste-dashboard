@@ -3,9 +3,26 @@ import SideBar from '../../components/dashboard/SideBar';
 import { Link } from "react-router-dom";
 import { AiOutlineBell } from 'react-icons/ai';
 import { IoMdExit } from "react-icons/io";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 
 export default function Category() {
+
+    const [category, setCategory] = useState([]);
+
+    const getCategory = () => {
+      fetch('http://localhost:8000/api/v1/categoryWaste').then(res => res.json()).then(data => {
+        setCategory(data.data.categoryWaste)
+      }).catch(err => console.log(err))
+    }
+    
+    useEffect(() => {
+        getCategory()
+    }, [])
+
+    console.log(category)
+
     return(   
         <>
         <SideBar />
@@ -65,17 +82,21 @@ export default function Category() {
                   </thead>
     
                 <tbody>
-                  <tr>
-                    <td className='px-5 py-5 text-sm text-center'>
-                        1
-                    </td>
-                    <td className='px-5 py-5 text-sm text-center'>
-                      <p>00001</p>
-                    </td>
-                    <td className='px-5 py-5 text-sm text-center'>
-                      <p>Temperature exchange equipment</p>
-                    </td>
-                    <td class="py-3 px-6 text-center">
+                  {
+                (category.length > 0) ? (
+                    category.map((item, index) => {
+                        return (
+                            <tr>
+                            <td className='px-5 py-5 text-sm text-center'>
+                                {index + 1}
+                            </td>
+                            <td className='px-5 py-5 text-sm text-center'>
+                              <p>{item.id}</p>
+                            </td>
+                            <td className='px-5 py-5 text-sm text-center'>
+                              <p>{item.name_category}</p>
+                            </td>
+                            <td class="py-3 px-6 text-center">
                                         <div class="flex item-center justify-center">
                                             <div class="w-4 mr-2 transform hover:text-gray-800 hover:scale-110">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -89,59 +110,16 @@ export default function Category() {
                                             </div>
                                         </div>
                                     </td>
-                             </tr>
-    
-                  <tr>
-                    <td className='px-5 py-5 text-sm text-center'>
-                        2
-                    </td>
-                    <td className='px-5 py-5 text-sm text-center'>
-                      <p>00002</p>
-                    </td>
-                    <td className='px-5 py-5 text-sm text-center'>
-                      <p>Screens and monitors</p>
-                    </td>
-                    <td class="px-5 py-5 text-sm">
-                                        <div class="flex item-center justify-center">
-                                            <div class="w-4 mr-2 transform hover:text-gray-800 hover:scale-110">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                </svg>
-                                            </div>
-                                            <div class="w-4 mr-2 transform hover:text-gray-800 hover:scale-110">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </td>
-                  </tr>
-    
-                  <tr>
-                    <td className='px-5 py-5 text-sm text-center'>
-                        3
-                    </td>
-                    <td className='px-5 py-5 text-sm text-center'>
-                      <p>00003</p>
-                    </td>
-                    <td className='px-5 py-5 text-sm text-center'>
-                      <p>Lamps</p>
-                    </td>
-                    <td class="py-3 px-6 text-sm">
-                                        <div class="flex item-center justify-center">
-                                            <div class="w-4 mr-2 transform hover:text-gray-800 hover:scale-110">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                </svg>
-                                            </div>
-                                            <div class="w-4 mr-2 transform hover:text-gray-800 hover:scale-110">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </td>
-                  </tr>
+                            </tr>
+                        )
+
+                    })
+                ) : (
+                    <tr>
+                        <td colSpan="4" className="text-center">No data</td>
+                    </tr>
+
+                )}
                 </tbody>
                 </table>
     
