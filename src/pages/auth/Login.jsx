@@ -1,8 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import bgLogin from '../../asset/img/bg-login.png'
 import iconLogin from '../../asset/img/icon-login.png'
 
 export default function Login() {
+  const [email_admin, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [msg, setMsg] = useState('');
+  const navigate = useNavigate();
+
+  const Auth = async (e) => {
+    e.preventDefault();
+    try{
+      await axios.post('http://localhost:8000/api/v1/auth/admin/login', {
+      email_admin: email_admin,
+      password: password
+
+      });
+      navigate("/Dashboard");
+    }catch (error){
+      if(error.response){
+        setMsg(error.response.data.msg);
+      }
+    }
+  }
+
   return (
     <div
       style={{
@@ -20,10 +43,11 @@ export default function Login() {
         </div>
         <h1 className="font-bold text-4xl text-black mb-2">Log In</h1>
         <p>Welcome!</p>
-        <form>
+        <form onSubmit={Auth}>
+          <p className='has-text-centered'>{msg}</p>
           <div className="flex flex-col gap-6 mt-10">
-            <input type="text" className="px-3 py-2 w-full bg-gray-300 outline-none rounded-md" placeholder="Username" />
-            <input type="password" className="px-3 py-2 w-full bg-gray-300 outline-none rounded-md" placeholder="Password" />
+            <input type="text" className="px-3 py-2 w-full bg-gray-300 outline-none rounded-md" placeholder="Username" value={email_admin} onChange={(e) => setEmail(e.target.value)} />
+            <input type="password" className="px-3 py-2 w-full bg-gray-300 outline-none rounded-md" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
             <button className="btn rounded-3xl bg-[#85C681] border-none text-white text-lg shadow-xl hover:bg-[#85C681] drop-shadow-xl">
               Login
             </button>
