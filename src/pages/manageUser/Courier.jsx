@@ -4,25 +4,8 @@ import { Link } from "react-router-dom";
 import { AiOutlineBell } from 'react-icons/ai';
 import { IoMdExit } from "react-icons/io";
 
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useEffect } from 'react';
 
 export default function Courier() {
-  const [courier,setCourier] = useState([])
-
-  const getCourier = async() => {
-    try {
-      let response = await axios.get('http://localhost:8000/api/v1/auth/courier/whoami')
-      console.log(response.data);
-    } catch(e){
-      console.log(e.message);
-    }
-  }
-
-  useEffect(() => {
-    getCourier();
-  })
     return(   
     <>
     <SideBar />

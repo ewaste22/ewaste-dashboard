@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { AiOutlineBell } from 'react-icons/ai';
 import { IoMdExit } from "react-icons/io";
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
 
 export default function Category() {
