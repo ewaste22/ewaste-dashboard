@@ -16,14 +16,39 @@ import { AddCategory } from './pages/category/AddCategory';
 import { AddAdmin } from './pages/manageUser/AddAdmin';
 import { AddCourier } from './pages/manageUser/AddCourier';
 import { AddUser } from './pages/manageUser/AddUser';
+import NavigateToDashboard from './auth/NavigateToDashboard';
 
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function App() {
+const [users, setUsers] = useState("");
+  const whoami = () => {
+    axios
+      .get('http://localhost:8000/api/v1/auth/admin/whoami', {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      })
+      .then((response) => {
+        setUsers(response.data.data);
+      });
+  };
+
+  useEffect(() => {
+    whoami();
+  },[])
+
   return (
+    <>
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Dashboard />} />
+        <Route path="login" element={
+          <NavigateToDashboard users={users}>
+          <Login />
+          </NavigateToDashboard>
+        } />
         <Route path="/admin" element={<Admin />} />
         <Route path='/addadmin' element={<AddAdmin/>} />
         <Route path="/courier" element={<Courier />} />
@@ -41,6 +66,7 @@ function App() {
         <Route path="/addcategory" element={<AddCategory />} />
       </Routes>
     </BrowserRouter>
+    </>
   );
 }
 
