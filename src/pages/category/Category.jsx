@@ -24,24 +24,10 @@ export default function Category() {
 
     return(   
         <>
-        <SideBar />
-        <div className="relative bg-[#D9D9D9] md:ml-64">
-          {/* <HeadBar /> */}
-          <div className='flex flex-row grow gap-4 w-full px-10 py-10'>
-            <div className='bg-white rounded-md w-full flex flex-row gap-3 items-center px-3 py-1'>
-              {/* <image src='/user.png' alt='user' className='rounded-full w-[40px] h-[40px]'/> */}
-              <p className=''>Good Morning, Lee Ji Eun! </p>
-            </div>
-            <div className='bg-white rounded-full flex items-center justify-center p-2'>
-              <AiOutlineBell className='w-[35px] h-[35px]'/>
-            </div>
-            <div className="flex w-[160px] flex-row items-center gap-3 rounded-md bg-white px-3 py-1">
-                {/* <image src='/user.png' alt='user' className='rounded-full w-[40px] h-[40px]'/> */}
-                <p className="">Logout</p>
-                <IoMdExit  className="h-[35px] w-[25px]" />
-              </div>
-          </div>
-    
+         <SideBar />
+         <div className="relative bg-[#D9D9D9] md:ml-64">
+         <HeadBar />
+
           {/* Title */}
           <div className='container px-8 mx-auto my-10 pb-28'>
             <div className='bg-white border rounded-lg shadow-lg p-10'>
@@ -55,7 +41,7 @@ export default function Category() {
                  </div> */}
                 {/* <input type="text" id="table-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-80 pl-10  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Search"></input> */}
                 <Link to={`/AddCategory`}><button on className="text-white absolute right-5  bg-gray-700 hover:bg-gray-800 font-medium rounded-lg text-sm px-4 py-2"> 
-        Add</button></Link>
+                 Add</button></Link>
                 </div>
                 </div>
                

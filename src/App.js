@@ -17,6 +17,7 @@ import { AddAdmin } from './pages/manageUser/AddAdmin';
 import { AddCourier } from './pages/manageUser/AddCourier';
 import { AddUser } from './pages/manageUser/AddUser';
 import NavigateToDashboard from './auth/NavigateToDashboard';
+import ProtectedToken from './auth/ProtectedToken';
 
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -43,27 +44,91 @@ const [users, setUsers] = useState("");
     <>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={
+          <ProtectedToken>
+            <Dashboard />
+          </ProtectedToken>
+        } />
         <Route path="login" element={
           <NavigateToDashboard users={users}>
           <Login />
           </NavigateToDashboard>
         } />
-        <Route path="/admin" element={<Admin />} />
-        <Route path='/addadmin' element={<AddAdmin/>} />
-        <Route path="/courier" element={<Courier />} />
-        <Route path='/addcourier' element={<AddCourier/>} />
-        <Route path="/user" element={<User />} />
-        <Route path='/adduser' element={<AddUser/>} />
-        <Route path="/transactions" element={<Transactions />} />
-        <Route path="/waste" element={<Waste />} />
-        <Route path='/addwaste' element={<AddWaste/>} />
-        <Route path="/pickup" element={<Pickup />} />
-        <Route path="/addpickup" element={<AddPickup />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/addnews" element={<AddNews />} />
-        <Route path="/category" element={<Category />} />
-        <Route path="/addcategory" element={<AddCategory />} />
+        <Route path="admin" element={
+           <ProtectedToken>
+           <Admin />
+         </ProtectedToken>
+        } />
+        <Route path='addadmin' element={
+         <ProtectedToken>
+           <AddAdmin />
+         </ProtectedToken>
+        } />
+        <Route path="courier" element={
+           <ProtectedToken>
+           <Courier />
+           </ProtectedToken>
+        } />
+        <Route path='addcourier' element={
+          <ProtectedToken>
+          <AddCourier />
+          </ProtectedToken>
+        } />
+        <Route path="/user" element={
+          <ProtectedToken>
+          <User />
+          </ProtectedToken>
+        } />
+        <Route path='adduser' element={
+          <ProtectedToken>
+          <AddUser />
+          </ProtectedToken>
+        } />
+        <Route path="transactions" element={
+          <ProtectedToken>
+          <Transactions />
+          </ProtectedToken>
+        } />
+        <Route path="waste" element={
+          <ProtectedToken>
+          <Waste />
+          </ProtectedToken>
+        } />
+        <Route path='addwaste' element={
+          <ProtectedToken>
+          <AddWaste />
+          </ProtectedToken>
+        } />
+        <Route path="pickup" element={
+          <ProtectedToken>
+          <Pickup />
+          </ProtectedToken>
+        } />
+        <Route path="addpickup" element={
+          <ProtectedToken>
+          <AddPickup />
+          </ProtectedToken>
+        } />
+        <Route path="news" element={
+          <ProtectedToken>
+          <News />
+          </ProtectedToken>
+        } />
+        <Route path="addnews" element={
+          <ProtectedToken>
+          <AddNews />
+          </ProtectedToken>
+        } />
+        <Route path="category" element={
+          <ProtectedToken>
+          <Category />
+          </ProtectedToken>
+        } />
+        <Route path="addcategory" element={
+          <ProtectedToken>
+          <AddCategory />
+          </ProtectedToken>
+        } />
       </Routes>
     </BrowserRouter>
     </>

@@ -6,23 +6,9 @@ import { IoMdExit } from "react-icons/io";
 export default function Transactions() {
     return(   
     <>
-    <SideBar />
-    <div className="relative bg-[#D9D9D9] md:ml-64">
-      {/* <HeadBar /> */}
-      <div className='flex flex-row grow gap-4 w-full px-10 py-10'>
-        <div className='bg-white rounded-md w-full flex flex-row gap-3 items-center px-3 py-1'>
-          {/* <image src='/user.png' alt='user' className='rounded-full w-[40px] h-[40px]'/> */}
-          <p className=''>Good Morning, Lee Ji Eun! </p>
-        </div>
-        <div className='bg-white rounded-full flex items-center justify-center p-2'>
-          <AiOutlineBell className='w-[35px] h-[35px]'/>
-        </div>
-        <div className="flex w-[160px] flex-row items-center gap-3 rounded-md bg-white px-3 py-1">
-            {/* <image src='/user.png' alt='user' className='rounded-full w-[40px] h-[40px]'/> */}
-            <p className="">Logout</p>
-            <IoMdExit  className="h-[35px] w-[25px]" />
-          </div>
-      </div>
+     <SideBar />
+      <div className="relative bg-[#D9D9D9] md:ml-64">
+      <HeadBar />
 
       {/* Title */}
       <div className='container px-8 mx-auto my-10 pb-28'>
