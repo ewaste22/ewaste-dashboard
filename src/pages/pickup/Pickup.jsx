@@ -1,16 +1,20 @@
 import HeadBar from '../../components/dashboard/HeadBar';
 import SideBar from '../../components/dashboard/SideBar';
 import { Link } from "react-router-dom";
-import { AiOutlineBell } from 'react-icons/ai';
-import { IoMdExit } from "react-icons/io";
 import { useState, useEffect } from 'react';
+import axios from "axios";
 
 export default function Pickup() {
   const [pickup, setPickup] = useState([]);
 
-  const getPickup = () => {
-    fetch('http://localhost:8000/api/v1/pickup').then(res => res.json()).then(data => {
-      setPickup(data.data.pickup)
+  const getPickup = async () => {
+    await axios.get('http://localhost:8000/api/v1/admin/pickup', {
+      headers:{
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      }
+    }).then(res => {
+      console.log(res.data.data.pickup)
+      setPickup(res.data.data.pickup)
     }).catch(err => console.log(err))
   }
   
@@ -18,7 +22,6 @@ export default function Pickup() {
       getPickup()
   }, [])
 
-  console.log(pickup)
 
     return(   
     <>
@@ -53,7 +56,7 @@ export default function Pickup() {
                     No
                   </th>
                   <th className='px-5 py-3 border-b-2 text-center  text-xs font-semibold text-gray-600 uppercase tracking-wide'>
-                    ID
+                   Pickup ID
                   </th>
                   <th className=' px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
                     Status Pickup

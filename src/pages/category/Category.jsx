@@ -1,18 +1,21 @@
 import HeadBar from '../../components/dashboard/HeadBar';
 import SideBar from '../../components/dashboard/SideBar';
 import { Link } from "react-router-dom";
-import { AiOutlineBell } from 'react-icons/ai';
-import { IoMdExit } from "react-icons/io";
 import { useState, useEffect } from 'react';
-
+import axios from "axios";
 
 export default function Category() {
 
     const [category, setCategory] = useState([]);
 
-    const getCategory = () => {
-      fetch('http://localhost:8000/api/v1/categoryWaste').then(res => res.json()).then(data => {
-        setCategory(data.data.categoryWaste)
+    const getCategory = async () => {
+      await axios.get('http://localhost:8000/api/v1/admin/categoryWaste', {
+        headers:{
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        }
+      }).then(res => {
+        console.log(res.data.data.categoryWaste)
+        setCategory(res.data.data.categoryWaste)
       }).catch(err => console.log(err))
     }
     
@@ -20,7 +23,6 @@ export default function Category() {
         getCategory()
     }, [])
 
-    console.log(category)
 
     return(   
         <>
@@ -55,7 +57,7 @@ export default function Category() {
                         No
                       </th>
                       <th className='px-5 py-3 border-b-2 text-center  text-xs font-semibold text-gray-600 uppercase tracking-wide'>
-                        ID
+                        Category ID
                       </th>
                       <th className=' px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
                         Category Name

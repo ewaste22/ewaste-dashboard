@@ -1,9 +1,25 @@
 import HeadBar from '../../components/dashboard/HeadBar';
 import SideBar from '../../components/dashboard/SideBar';
-import { AiOutlineBell } from 'react-icons/ai';
-import { IoMdExit } from "react-icons/io";
+import { useState, useEffect } from 'react';
+import axios from "axios";
 
 export default function Transactions() {
+  const [transactions, setTransactions] = useState([]);
+
+  const getPickup = async () => {
+    await axios.get('http://localhost:8000/api/v1/admin/transaction', {
+      headers:{
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      }
+    }).then(res => {
+      console.log(res.data.data.transaction)
+      setTransactions(res.data.data.transaction)
+    }).catch(err => console.log(err))
+  }
+  
+  useEffect(() => {
+      getPickup()
+  }, [])
     return(   
     <>
      <SideBar />
@@ -36,13 +52,13 @@ export default function Transactions() {
                     No
                   </th>
                   <th className='px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
-                    ID
+                    Transaction ID
+                  </th>
+                  <th className='px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
+                    Cart ID
                   </th>
                   <th className='px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
                     Date
-                  </th>
-                  <th className='px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
-                    Customer Name
                   </th>
                   <th className='px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
                     Status Transaction
@@ -57,24 +73,28 @@ export default function Transactions() {
               </thead>
 
             <tbody>
+            {
+                (transactions.length > 0) ? (
+                  transactions.map((item, index) => {
+                return(
               <tr>
                 <td className='px-5 py-5 text-sm text-center'>
-                  1
+                {index + 1}
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>00001</p>
+                  <p>{item.id}</p>
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>24-10-2022</p>
+                  <p>{item.cart_id}</p>
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>Kim Jiso</p>
+                  <p>{item.updatedAt}</p>
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>Success</p>
+                  <p>{item.status_transaction}</p>
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>5 Items</p>
+                  <p>{item.totalWeight_transaction}</p>
                 </td>
                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-center">
@@ -85,75 +105,18 @@ export default function Transactions() {
                                             </svg>
                                         </div>
                                     </div>
-              </td>
-              </tr>
-
-              <tr>
-                <td className='px-5 py-5 text-sm text-center'>
-                  2
-                </td>
-                <td className='px-5 py-5 text-sm text-center'>
-                  <p>00002</p>
-                </td>
-                <td className='px-5 py-5 text-sm text-center'>
-                  <p>23-10-2022</p>
-                </td>
-                <td className='px-5 py-5 text-sm text-center'>
-                  <p>Kim Jennie</p>
-                </td>
-                <td className='px-5 py-5 text-sm text-center'>
-                  <p>Success</p>
-                </td>
-                <td className='px-5 py-5 text-sm text-center'>
-                  <p>10 Items</p>
-                </td>
-                <td class="py-3 px-6 text-center">
-                                    <div class="flex item-center justify-center">
-                                        <div class="w-4 mr-2 transform hover:text-gray-800 hover:scale-110">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-              </td>
-              </tr>
-
-              <tr>
-                <td className='px-5 py-5 text-sm text-center'>
-                  3
-                </td>
-                <td className='px-5 py-5 text-sm text-center'>
-                  <p>00003</p>
-                </td>
-                <td className='px-5 py-5 text-sm text-center'>
-                  <p>22-10-2022</p>
-                </td>
-                <td className='px-5 py-5 text-sm text-center'>
-                  <p>Lalisa</p>
-                </td>
-                <td className='px-5 py-5 text-sm text-center'>
-                  <p>Cancel</p>
-                </td>
-                <td className='px-5 py-5 text-sm text-center'>
-                  <p>7 Items</p>
-                </td>
-                <td class="py-3 px-6 text-center">
-                                    <div class="flex item-center justify-center">
-                                        <div class="w-4 mr-2 transform hover:text-gray-800 hover:scale-110">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-              </td>
-              </tr>
-            </tbody>
-            </table>
-
-           
-          </div>
+                              </td>
+                              </tr>
+                                )
+                              })
+                              ):(
+                              <tr>
+                              <td colSpan="4" className="text-center">No data</td>
+                              </tr>
+                              )}
+                      </tbody>
+                      </table>
+                    </div>
           {/* <div className='px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between '>
             <div className="inline-flex mt-2 xs:mt-0">
 							<button className="text-sm text-indigo-50 transition duration-150 bg-gray-700 hover:bg-gray-800 font-semibold py-2 px-4 rounded-lg">

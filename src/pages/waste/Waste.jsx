@@ -4,21 +4,26 @@ import { Link } from "react-router-dom";
 import { AiOutlineBell } from 'react-icons/ai';
 import { IoMdExit } from "react-icons/io";
 import { useState, useEffect } from 'react';
+import axios from "axios";
 
 export default function Waste() {
-  const [waste, setWaste] = useState([]);
+  const [wastes, setWastes] = useState([]);
 
-  const getWaste = () => {
-    fetch('http://localhost:8000/api/v1/waste').then(res=> res.json()).then(data => {
-      setWaste(data.data.waste)
+  const getWastes = async () => {
+    await axios.get('http://localhost:8000/api/v1/admin/waste', {
+      headers:{
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      }
+    }).then(res => {
+      console.log(res.data.data.wastes)
+      setWastes(res.data.data.wastes)
     }).catch(err => console.log(err))
   }
-
+  
   useEffect(() => {
-    getWaste()
+      getWastes()
   }, [])
 
-  console.log(waste)
     return(   
     <>
       <SideBar />
@@ -52,7 +57,7 @@ export default function Waste() {
                     No
                   </th>
                   <th className='px-5 py-3 border-b-2 text-center  text-xs font-semibold text-gray-600 uppercase tracking-wide'>
-                    ID
+                   Waste ID
                   </th>
                   <th className=' px-5 py-3 border-b-2  text-center text-xs font-semibold text-gray-600 uppercase tracking-wide'>
                     Name
@@ -68,8 +73,8 @@ export default function Waste() {
 
             <tbody>
               {
-                (waste.length > 0) ? (
-                  waste.map((item, index) => {
+                (wastes.length > 0) ? (
+                  wastes.map((item, index) => {
                 return(
               <tr>
                 <td className='px-5 py-5 text-sm text-center'>
