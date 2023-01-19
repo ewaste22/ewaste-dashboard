@@ -3,6 +3,7 @@ import SideBar from '../../components/dashboard/SideBar';
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import axios from "axios";
+import swal from "sweetalert";
 
 export default function News() { 
   const [news, setNews] = useState([]);
@@ -18,9 +19,43 @@ export default function News() {
     }).catch(err => console.log(err))
   }
   
+  
   useEffect(() => {
       getNews()
   }, [])
+
+  const handleDelete = async(id) => {
+    swal({
+      title: "Apakah anda yakin?",
+      text: "Setelah dihapus, Anda tidak akan dapat mengembalikan data ini!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        axios
+          .delete(
+            `http://localhost:8000/api/v1/admin/news/${id}`,
+            {
+              headers: {
+                Authorization: "Bearer " + localStorage.getItem("token"),
+              },
+            }
+          )
+          .then((response) => {})
+          .catch((error) => {})
+          .finally(() => {
+            window.location.href = "/news";
+          });
+        swal("Data berhasil dihapus!", {
+          icon: "success",
+        });
+      } else {
+        swal("Data tidak jadi dihapus!");
+      }
+    });
+  }
+
 
   return(   
         <>
@@ -96,9 +131,10 @@ export default function News() {
                                                 </svg>
                                             </div>
                                             <div class="w-4 mr-2 transform hover:text-gray-800 hover:scale-110">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                               <svg onClick={() => handleDelete(item.id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                 </svg>
+                                              
                                             </div>
                                         </div>
                                     </td>
