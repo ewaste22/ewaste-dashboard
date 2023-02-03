@@ -22,8 +22,9 @@ export default function Waste() {
   }
   
   useEffect(() => {
-      getWastes()
-  }, [])
+      getWastes();
+      // console.log('Haloooo')
+  }, [wastes])
 
   const handleDelete = async(id) => {
     swal({
@@ -114,13 +115,13 @@ export default function Waste() {
                     {index + 1}
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>{item.id}</p>
+                  <p>{item?.id}</p>
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>{item.name_waste}</p>
+                  <p>{item?.name_waste}</p>
                 </td>
                 <td className='px-5 py-5 text-sm text-center'>
-                  <p>{item.category_id}</p>
+                  <p>{item?.Category_waste?.name_category}</p>
                 </td>
                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-center">

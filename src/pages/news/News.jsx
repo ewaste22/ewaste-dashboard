@@ -112,10 +112,10 @@ export default function News() {
                       {index + 1}
                     </td>
                     <td className='px-5 py-5 text-sm text-center'>
-                    <p>{item.id}</p>
+                    <p>{item?.id}</p>
                     </td>
                     <td className='px-5 py-5 text-sm text-center'>
-                    <p>{item.title_news}</p>
+                    <p>{item?.title_news}</p>
                     </td>
                     <td class="py-3 px-6 text-center">
                                         <div class="flex item-center justify-center">

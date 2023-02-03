@@ -95,8 +95,8 @@ const [users, setUsers] = useState("");
           </ProtectedToken>
         } />
         <Route path='addwaste' element={
-          <ProtectedToken>
-          <AddWaste />
+          <ProtectedToken >
+          <AddWaste users={users} />
           </ProtectedToken>
         } />
         <Route path="pickup" element={
@@ -115,8 +115,8 @@ const [users, setUsers] = useState("");
           </ProtectedToken>
         } />
         <Route path="addnews" element={
-          <ProtectedToken>
-          <AddNews />
+          <ProtectedToken >
+          <AddNews users={users} />
           </ProtectedToken>
         } />
         <Route path="category" element={
@@ -126,7 +126,7 @@ const [users, setUsers] = useState("");
         } />
         <Route path="addcategory" element={
           <ProtectedToken>
-          <AddCategory />
+          <AddCategory users={users} />
           </ProtectedToken>
         } />
       </Routes>
