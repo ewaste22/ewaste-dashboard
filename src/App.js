@@ -16,11 +16,17 @@ import { AddCategory } from './pages/category/AddCategory';
 import { AddAdmin } from './pages/manageUser/AddAdmin';
 import { AddCourier } from './pages/manageUser/AddCourier';
 import { AddUser } from './pages/manageUser/AddUser';
+import {EditCategory} from './pages/category/EditCategory';
+import { EditNews } from './pages/news/EditNews';
+import { EditWaste } from './pages/waste/EditWaste';
 import NavigateToDashboard from './auth/NavigateToDashboard';
 import ProtectedToken from './auth/ProtectedToken';
 
 import { useState, useEffect } from "react";
 import axios from "axios";
+
+
+
 
 function App() {
 const [users, setUsers] = useState("");
@@ -99,6 +105,11 @@ const [users, setUsers] = useState("");
           <AddWaste users={users} />
           </ProtectedToken>
         } />
+          <Route path="editwaste/:id" element={
+          <ProtectedToken>
+          <EditWaste  />
+          </ProtectedToken>
+        } />
         <Route path="pickup" element={
           <ProtectedToken>
           <Pickup />
@@ -119,6 +130,11 @@ const [users, setUsers] = useState("");
           <AddNews users={users} />
           </ProtectedToken>
         } />
+         <Route path="editnews/:id" element={
+          <ProtectedToken>
+          <EditNews users={users} />
+          </ProtectedToken>
+        } />
         <Route path="category" element={
           <ProtectedToken>
           <Category />
@@ -127,6 +143,11 @@ const [users, setUsers] = useState("");
         <Route path="addcategory" element={
           <ProtectedToken>
           <AddCategory users={users} />
+          </ProtectedToken>
+        } />
+      <Route path="editcategory/:id" element={
+          <ProtectedToken>
+          <EditCategory users={users} />
           </ProtectedToken>
         } />
       </Routes>
