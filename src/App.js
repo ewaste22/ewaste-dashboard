@@ -19,11 +19,15 @@ import { AddUser } from './pages/manageUser/AddUser';
 import {EditCategory} from './pages/category/EditCategory';
 import { EditNews } from './pages/news/EditNews';
 import { EditWaste } from './pages/waste/EditWaste';
+import  { DetailWaste } from './pages/waste/DetailWaste';
+import {DetailNews} from './pages/news/DetailNews';
 import NavigateToDashboard from './auth/NavigateToDashboard';
 import ProtectedToken from './auth/ProtectedToken';
 
 import { useState, useEffect } from "react";
 import axios from "axios";
+
+
 
 
 
@@ -110,6 +114,11 @@ const [users, setUsers] = useState("");
           <EditWaste  />
           </ProtectedToken>
         } />
+         <Route path="detailwaste/:id" element={
+          <ProtectedToken>
+          <DetailWaste  />
+          </ProtectedToken>
+        } />
         <Route path="pickup" element={
           <ProtectedToken>
           <Pickup />
@@ -133,6 +142,11 @@ const [users, setUsers] = useState("");
          <Route path="editnews/:id" element={
           <ProtectedToken>
           <EditNews users={users} />
+          </ProtectedToken>
+        } />
+        <Route path="detailnews/:id" element={
+          <ProtectedToken>
+          <DetailNews />
           </ProtectedToken>
         } />
         <Route path="category" element={
