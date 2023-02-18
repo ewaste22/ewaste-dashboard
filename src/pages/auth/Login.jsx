@@ -29,6 +29,7 @@ export default function Login() {
       })
       .catch((error) => {
         toast(error.response.data.message);
+        console.log(error)
       });
   }
   // const [msg, setMsg] = useState('');
@@ -55,12 +56,9 @@ export default function Login() {
       style={{
         backgroundImage: `url(${bgLogin})`
       }}
-      className="w-screen overflow-x-hidden h-screen flex justify-center items-center bg-white bg-cover bg-center"
+      className="w-full overflow-hidden  min-h-screen   bg-white bg-cover bg-center"
     >
-      <div className="bg-[#85C681] absolute bottom-0 w-screen h-12 text-white flex justify-center items-center">
-        <p>© E-Waste 2022</p>
-      </div>
-      <div className="container mx-auto max-w-xl shadow-xl rounded-3xl border border-gray-100 pt-1 px-20 pb-10 bg-white">
+      <div className="container mx-auto max-w-xl shadow-xl rounded-3xl border border-gray-100 px-20 my-10 pb-10 bg-white">
         <div className="flex flex-col justify-cente w-full items-center mb-12">
           <img src={iconLogin} className="w-[158px] h-[226px]" alt="e waste" />
           <h1 className="text-[#2D5030] text-[40px] leading-[60px]">E-Waste</h1>
@@ -79,6 +77,9 @@ export default function Login() {
             </button>
           </div>
         ) : null}
+      </div>
+      <div className="bg-[#85C681] sticky bottom-0 w-full h-12 text-white flex justify-center items-center">
+        <p>© E-Waste 2022</p>
       </div>
     </div>
   );
