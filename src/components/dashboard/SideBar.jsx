@@ -97,8 +97,8 @@ export default function SideBar() {
                 <Link
                   className={
                     'flex py-3 text-lg font-bold ' +
-                    (window.location.href.indexOf('/') !== -1
-                      ? 'text-lightBlue-500 hover:text-lightBlue-600 ro'
+                    (window.location.pathname === '/'
+                      ? 'text-white rounded-lg bg-[#85C681]'
                       : 'text-stone-700 hover:text-stone-500')
                   }
                   to="/"
@@ -124,7 +124,7 @@ export default function SideBar() {
                   className={
                     'flex py-3 text-lg font-bold ' +
                     (window.location.href.indexOf('/users') !== -1
-                      ? 'text-lightBlue-500 hover:text-lightBlue-600 ro'
+                      ? 'text-white rounded-lg bg-[#85C681]'
                       : 'text-stone-700 hover:text-stone-500')
                   }
                   to="/users"
@@ -146,7 +146,7 @@ export default function SideBar() {
                   className={
                     'flex py-3 text-lg font-bold ' +
                     (window.location.href.indexOf('/transactions') !== -1
-                      ? 'text-lightBlue-500 hover:text-lightBlue-600 ro'
+                      ? 'text-white rounded-lg bg-[#85C681]'
                       : 'text-stone-700 hover:text-stone-500')
                   }
                   to="/transactions"
@@ -168,7 +168,7 @@ export default function SideBar() {
                   className={
                     'flex py-3 text-lg font-bold ' +
                     (window.location.href.indexOf('/category') !== -1
-                      ? 'text-lightBlue-500 hover:text-lightBlue-600 rounded-lg bg-green-500'
+                      ? 'text-white rounded-lg bg-[#85C681]'
                       : 'text-stone-700 hover:text-stone-500')
                   }
                   to="/category"
@@ -190,7 +190,7 @@ export default function SideBar() {
                   className={
                     'flex py-3 text-lg font-bold ' +
                     (window.location.href.indexOf('/waste') !== -1
-                      ? 'text-lightBlue-500 hover:text-lightBlue-600 ro'
+                      ? 'text-white rounded-lg bg-[#85C681]'
                       : 'text-stone-700 hover:text-stone-500')
                   }
                   to="/waste"
@@ -212,7 +212,7 @@ export default function SideBar() {
                   className={
                     'flex py-3 text-lg font-bold ' +
                     (window.location.href.indexOf('/pickup') !== -1
-                      ? 'text-lightBlue-500 hover:text-lightBlue-600 ro'
+                      ? 'text-white rounded-lg bg-[#85C681]'
                       : 'text-stone-700 hover:text-stone-500')
                   }
                   to="/pickup"
@@ -234,7 +234,7 @@ export default function SideBar() {
                   className={
                     'flex py-3 text-lg font-bold ' +
                     (window.location.href.indexOf('/news') !== -1
-                      ? 'text-lightBlue-500 hover:text-lightBlue-600 ro'
+                      ? 'text-white rounded-lg bg-[#85C681]'
                       : 'text-stone-700 hover:text-stone-500')
                   }
                   to="/news"

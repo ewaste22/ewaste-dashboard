@@ -26,7 +26,7 @@ const SubMenu = ({item}) => {
         {subNav &&
         item.subNav.map((item, index) => {
           return (
-            <Link to={item.path} key={index}>
+            <Link to={item.path} key={index} className={`${window.location.pathname === ('/'+item.title)?"text-[#85C681] rounded-lg !bg-[#85C681]" :""}`}>
             <div className="mr-2 text-2xl">{item.icon}</div>  
               <div className="text-lg font-bold ml-8">{item.title}</div>
             </Link>

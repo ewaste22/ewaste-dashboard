@@ -35,7 +35,7 @@ export default function HeadBar() {
           {isLoggedIn ? ( 
           <div className="flex w-[160px] flex-row items-center gap-3 rounded-md bg-white px-3 py-1">
                 {/* <image src='/user.png' alt='user' className='rounded-full w-[40px] h-[40px]'/> */}
-                <button className='flex w-[160px] flex-row gap-3' onClick={logout}>
+                <button className='flex w-[160px] flex-row gap-3 items-center text-red-600' onClick={logout}>
                   <p>Logout</p>
                   <IoMdExit  className="h-[35px] w-[25px]" />
                 </button>

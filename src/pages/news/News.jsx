@@ -76,7 +76,7 @@ export default function News() {
                  </div> */}
                 {/* <input type="text" id="table-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-80 pl-10  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Search"></input> */}
               
-                <Link to={`/AddNews`}><button on className="text-white absolute right-5  bg-gray-700 hover:bg-gray-800 font-medium rounded-lg text-sm px-4 py-2"> 
+                <Link to={`/AddNews`}><button on className="text-white absolute right-5  bg-[#85C681] font-medium rounded-lg text-sm px-4 py-2"> 
         Add</button></Link>
                 </div>
                 </div>
@@ -157,11 +157,11 @@ export default function News() {
               </div>
               {/* <div className='px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between '>
                 <div className="inline-flex mt-2 xs:mt-0">
-                                <button className="text-sm text-indigo-50 transition duration-150 bg-gray-700 hover:bg-gray-800 font-semibold py-2 px-4 rounded-lg">
+                                <button className="text-sm text-indigo-50 transition duration-150 bg-[#85C681] font-semibold py-2 px-4 rounded-lg">
                   Prev
                   </button>
                                 &nbsp; &nbsp;
-                                <button className="text-sm text-indigo-50 transition duration-150 bg-gray-700 hover:bg-gray-800 font-semibold py-2 px-4 rounded-lg">
+                                <button className="text-sm text-indigo-50 transition duration-150 bg-[#85C681] font-semibold py-2 px-4 rounded-lg">
                   Next
                   </button>
                             </div>

@@ -72,7 +72,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="container mx-auto mb-6 flex max-w-[67rem] flex-col items-center justify-center rounded-xl bg-white md:px-12">
+        <div className="container mx-auto mb-6 flex max-w-[63rem] flex-col items-center justify-center rounded-xl bg-white md:px-12">
           <h1 className="py-2 text-[32px] leading-10">Transaction Summary</h1>
           <Bar data={data} options={options} />
         </div>
